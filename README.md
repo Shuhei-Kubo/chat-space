@@ -33,7 +33,7 @@ Things you may want to cover:
 - has_many :comments
 _ has many : groups
 
-## postsテーブル
+## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |title|text|null: false|
@@ -41,8 +41,8 @@ _ has many : groups
 |user_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-- has_many :comments
-_ has_many :groups
+- has_many :messages
+_ belongs_to :groups
 
 
 ## groupsテーブル
@@ -51,6 +51,7 @@ _ has_many :groups
 |text|text|null: false|
 ### Association
 - has_many :users
+_ has_many :messages
 
 ## users_groupsテーブル
 |Column|Type|Options|
