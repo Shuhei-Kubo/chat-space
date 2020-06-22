@@ -56,7 +56,7 @@ _ has_many :messages
 ## users_groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|group_name|integer|null: false, foreign_key: true|
+|group_name|string|null: false, foreign_key: true|
 |username|string|null: false, foreign_key: true|
 ### Association
 - belongs_to :users
