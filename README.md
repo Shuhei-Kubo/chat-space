@@ -35,7 +35,6 @@ _ has many : groups, through:  :users_groups
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|title|text|null: false|
 |text|text|null: false|
 |user_id|integer|null: false, foreign_key: true|
 ### Association
@@ -48,6 +47,8 @@ _ belongs_to :groups
 |Column|Type|Options|
 |------|----|-------|
 |text|text|null: false|
+|username|string|null: false|
+|group_name|string|null: false|
 ### Association
 - has_many :users, through:  :users_groups
 _ has_many :messages
@@ -55,8 +56,8 @@ _ has_many :messages
 ## users_groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|post_id|integer|null: false, foreign_key: true|
-|tag_id|integer|null: false, foreign_key: true|
+|group_name|integer|null: false, foreign_key: true|
+|username|string|null: false, foreign_key: true|
 ### Association
 - belongs_to :users
 - belongs_to :groups
