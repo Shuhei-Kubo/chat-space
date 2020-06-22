@@ -31,6 +31,7 @@ Things you may want to cover:
 ### Association
 - has_many :posts
 - has_many :comments
+_ has many : groups
 
 ## postsテーブル
 |Column|Type|Options|
@@ -41,21 +42,21 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 - has_many :comments
+_ has_many :groups
 
 
-## replyテーブル
+## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |text|text|null: false|
 ### Association
-- has_many :post_reply
-- has_many  :posts,  through:  :posts_tags
+- has_many :users
 
-## posts_replyテーブル
+## users_groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |post_id|integer|null: false, foreign_key: true|
 |tag_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :user
-- belongs_to :tag
+- belongs_to :users
+- belongs_to :groups
