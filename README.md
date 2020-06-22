@@ -29,9 +29,8 @@ Things you may want to cover:
 |password|string|null: false|
 |username|string|null: false|
 ### Association
-- has_many :posts
-- has_many :comments
-_ has many : groups
+- has_many :messages
+_ has many : groups, through:  :users_groups
 
 ## messagesテーブル
 |Column|Type|Options|
@@ -50,7 +49,7 @@ _ belongs_to :groups
 |------|----|-------|
 |text|text|null: false|
 ### Association
-- has_many :users
+- has_many :users, through:  :users_groups
 _ has_many :messages
 
 ## users_groupsテーブル
