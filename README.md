@@ -28,36 +28,38 @@ Things you may want to cover:
 |email|string|null: false|
 |password|string|null: false|
 |username|string|null: false|
+|groups|string|null: false|
 ### Association
 - has_many :messages
+_ has_many :users_groups
 _ has many : groups, through:  :users_groups
 
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
+|text|text||
+|image|string||
 |user_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :user
-- has_many :messages
-_ belongs_to :groups
+- belongs_to :user :through:  :users_groups
+_ belongs_to :group :through:  :users_groups
 
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
-|username|string|null: false|
-|group_name|string|null: false|
+|name|string|null: false|
 ### Association
 - has_many :users, through:  :users_groups
 _ has_many :messages
+_ has_many :users_groups
 
-## users_groupsテーブル
+## groups_usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|null: false, foreign_key: true|
-|username|string|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+
 ### Association
-- belongs_to :users
-- belongs_to :groups
+- belongs_to :group
+- belongs_to :user
