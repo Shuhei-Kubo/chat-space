@@ -1,0 +1,59 @@
+
+.SideBar {
+  height: 100vh;
+  width: 300px;
+  background-color: #2f3e51;
+  flex-direction: column;
+  float: left;
+}
+
+.UserBox {
+  height: 100px;
+  width : 300px;
+  background: #253141;
+  display: flex;
+  align-items: center;
+  &__list{
+    height: 20px;
+    width: 260px;
+    margin: 0 20px 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__name{
+    font-size: 16px;
+    align-items: center;
+    color: #ffffff;
+  }
+  &__iconList {
+    width: 60px;
+    background:#253141;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .icon_1{
+    color: #ffffff;
+  }
+  .icon_2{
+    color: #ffffff;
+    margin: 5px;
+  }
+  }
+
+.GroupList {
+  height: calc(100vh - 100px);
+  width: 300px;
+  flex-direction: column;
+  padding: 20px;
+  &__name{
+    font-size: 15px;
+    color: #ffffffff;
+  } 
+  &__message{
+    font-size: 11px;
+    color: #ffffff;
+    margin-top: 5px;
+  }
+  }

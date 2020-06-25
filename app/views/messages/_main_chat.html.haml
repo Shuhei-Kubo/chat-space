@@ -1,0 +1,25 @@
+.MainChat
+  .Header
+    .HeaderLeft
+      .HeaderLeft__Group test
+      .HeaderLeft__Member-list Member: masa
+    .RightEdit
+      .RightEdit__Edit-btn Edit
+  .MainMessage
+    .MessageBox
+      .MessageInfo
+        .MessageInfo__UserName masa
+        .MessageInfo__Date 2019/11/20(Wed) 17:43:01
+    .MessageComment こんにちわ！
+    .MessageBox
+      .MessageInfo2
+        .MessageInfo2__UserName2 masa
+        .MessageInfo2__Date2 2019/11/20(Wed) 17:43:34
+    .MessageComment2 今日は夜から雨
+  .Footer
+    .Footer__inputBox
+      %input.Footer__inputBox__inputText{"placeholder": "type a message", "type": "text_field"}
+      %label{class: "input-box__image"}
+        = icon('fas', 'image')
+        %input.hidden{type: "file"}
+    %input.Footer__inputBox__submitBtn{"name": "commit", "type": "submit", "value": "Send"}
