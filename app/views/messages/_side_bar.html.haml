@@ -4,10 +4,15 @@
       %h3.UserBox__name
         = current_user. name
       %ul.UserBox__iconList
-        = link_to "#", class:"icon_1" do
+        = link_to new_group_path(current_user),class:"icon_1"do
           = icon('fa','edit')
         = link_to edit_user_path(current_user),class:"icon_2"do
           = icon('fa','cog')
   .GroupList
-    .GroupList__name techcamp
-    .GroupList__message まだメッセージはありません
+    - current_user.groups.each do |group|
+      .Group
+        = link_to '#' do
+          .Group__name
+            = group.name
+          .Group__message
+            メッセージはまだありません
