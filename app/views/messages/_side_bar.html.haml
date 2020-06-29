@@ -2,7 +2,7 @@
   .UserBox
     .UserBox__list
       %h3.UserBox__name
-        = current_user. name
+        = current_user.name
       %ul.UserBox__iconList
         = link_to new_group_path(current_user),class:"icon_1"do
           = icon('fa','edit')
@@ -11,8 +11,8 @@
   .GroupList
     - current_user.groups.each do |group|
       .Group
-        = link_to '#' do
+        = link_to group_messages_path(group) do
           .Group__name
             = group.name
           .Group__message
-            メッセージはまだありません
+            = group.show_last_message

@@ -101,39 +101,44 @@
 
 .Footer {
   height: 90px;
+  width: calc(100vw - 300px);
   background: #d2d2d2;
   margin-bottom: 0px;
   padding: 20px 40px;
   display: flex;
-  &__inputBox {
-    width: 100%;
-    display: flex;
-    position: relative;
-    &__inputText{
-      height: 50px;
-      width: 100%;
-    }
-    .input-box__image {
-      font-size: 25px;
-      position: absolute;
-      right: 10px;
-      line-height: 50px;
-      font-size: 25px;
-    }
-    .hidden{
-      display: none;
-    }
 
-    &__submitBtn{
-      height: 50px;
-      font-size: 16px;
-      color: #fff;
-      padding: 0 30px;
-      background-color: #38aef0;
-      margin-left: 15px;
-     } 
- }
 }
-  
+.Form {
+  display: flex;
+  position: relative;
 
+&__contents {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
 
+&__inputContent {
+    width: calc(100vw - 500px);
+    height: 50px;
+}
+
+&__inputImage {
+position: absolute;
+right: 10px; 
+line-height: 50px;
+}
+&__icon {
+  font-size: 45px;
+}
+
+&__submit {
+  margin: 0 40px 0 15px;
+  width: 110px;
+  background-color: #38aef0;
+  font-size: 16px;
+}
+.Hidden {
+  display: none
+}
+}

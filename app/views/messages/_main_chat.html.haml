@@ -1,11 +1,21 @@
 .MainChat
   .Header
     .HeaderLeft
-      .HeaderLeft__Group test
-      .HeaderLeft__Member-list Member: masa
+      .HeaderLeft__Group
+        = @group.name
+      .HeaderLeft__Member-list 
+        Member:
+        - @group.users.each do |user|
+          = user.name
+       
     .RightEdit
-      .RightEdit__Edit-btn Edit
+      .RightEdit__Edit-btn 
+        = link_to edit_group_path(@group) do
+          Edit
+
   .MainMessage
+    .MessageField
+    = render @messages
     .MessageBox
       .MessageInfo
         .MessageInfo__UserName masa
@@ -17,9 +27,10 @@
         .MessageInfo2__Date2 2019/11/20(Wed) 17:43:34
     .MessageComment2 今日は夜から雨
   .Footer
-    .Footer__inputBox
-      %input.Footer__inputBox__inputText{"placeholder": "type a message", "type": "text_field"}
-      %label{class: "input-box__image"}
-        = icon('fas', 'image')
-        %input.hidden{type: "file"}
-    %input.Footer__inputBox__submitBtn{"name": "commit", "type": "submit", "value": "Send"}
+    = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
+      .Form__contents
+        = f.text_field :content, class: 'Form__inputContent', placeholder: 'type a message'
+        = f.label :image, class: 'Form__inputImage' do
+          = icon('far', 'image', class: 'Form__icon')
+          = f.file_field :image, class: 'Hidden'
+      = f.submit 'Send', class: 'Form__submit'
