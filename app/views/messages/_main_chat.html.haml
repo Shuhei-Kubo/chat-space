@@ -14,18 +14,8 @@
           Edit
 
   .MainMessage
-    .MessageField
     = render @messages
-    .MessageBox
-      .MessageInfo
-        .MessageInfo__UserName masa
-        .MessageInfo__Date 2019/11/20(Wed) 17:43:01
-    .MessageComment こんにちわ！
-    .MessageBox
-      .MessageInfo2
-        .MessageInfo2__UserName2 masa
-        .MessageInfo2__Date2 2019/11/20(Wed) 17:43:34
-    .MessageComment2 今日は夜から雨
+    
   .Footer
     = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
       .Form__contents
