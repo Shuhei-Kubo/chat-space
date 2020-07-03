@@ -41,7 +41,6 @@ $(function(){
   }
 
   $('.Form').on('submit', function(e){
-    console.log(e)
     e.preventDefault();
     let formData = new FormData(this);
     let url = $(this).attr('action');
@@ -54,7 +53,6 @@ $(function(){
       contentType: false
     })
     .done(function(data){
-      //console.log("AAAAA")
       let html = buildHTML(data);
       $('.MainMessage').append(html);      
       $('form')[0].reset();     
