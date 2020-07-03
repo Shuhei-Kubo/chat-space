@@ -33,6 +33,18 @@ describe MessagesController do
       it 'redirects to new_user_session_path' do
         expect(response).to redirect_to(new_user_session_path)
       end
+      def create
+        @message = @group.messages.new(message_params)
+        if @message.save
+          respond_to do |format|
+            format.json
+          end
+        else
+          @messages = @group.messages.includes(:user)
+          flash.now[:alert] = 'メッセージを入力してください。'
+          render :index
+        end
+      end
     end
   end
 end
