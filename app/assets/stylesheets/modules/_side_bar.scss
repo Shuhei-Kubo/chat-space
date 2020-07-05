@@ -47,13 +47,13 @@
   width: 300px;
   flex-direction: column;
   padding: 20px;
-  &__name{
+}
+.Group__name{
     font-size: 15px;
     color: #ffffffff;
   } 
-  &__message{
+.Group__message{
     font-size: 11px;
     color: #ffffff;
     margin-top: 5px;
-  }
   }
