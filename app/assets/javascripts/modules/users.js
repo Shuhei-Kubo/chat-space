@@ -1,7 +1,7 @@
 $(function() {
 function addUser(user) {
   let html = `
-              <div class="ChatMember">
+             <div class="SettingGroupForm__search clearfix">
                 <p class="ChatMember__name">${user.name}</p>
                 <div class="ChatMember__add ChatMember__button" data-user-id="${user.id}" data-user-name="${user.name}">追加</div>
               </div>
@@ -31,6 +31,7 @@ function addMember(name, id) {
 
 $("#UserSearch__field").on("keyup", function() {
   let input = $("#UserSearch__field").val();
+  console.log(input);
   $.ajax({
     type: "GET",
     url: "/users",
