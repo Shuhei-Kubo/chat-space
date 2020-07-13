@@ -42,7 +42,7 @@ _ has many : groups, through:  :users_groups
 |group_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user 
-_ belongs_to :group
+- belongs_to :group
 
 
 ## groupsテーブル
